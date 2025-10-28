@@ -1,0 +1,27 @@
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin flex-col-left{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: left;
+}
+
+
+@mixin primary-button {
+    background: #4CAF4F;
+    color: #fff;
+    border-radius: 4px;
+    padding: 14px 32px;
+    @include flex-center;
+}
