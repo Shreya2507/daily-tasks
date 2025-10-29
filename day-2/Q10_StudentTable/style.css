@@ -1,3 +1,42 @@
-table, td, th{
-    border: solid 1px black;
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.table-container{
+    overflow-y: auto;
+}
+
+table{
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+th{
+    background-color: rgba(23, 218, 225, 1);
+    padding: 15px;
+}
+
+td{
+    background-color: rgb(239, 239, 239);
+    padding: 10px;
+    border-top: 1px solid gray;
+}
+
+button{
+    font-size: 18px; 
+    border: none; 
+    border-radius: 5px; 
+    padding: 10px 30px; 
+    cursor: pointer; 
+    background-color: rgba(23, 218, 225, 1); 
+    color: white; 
+    font-weight: 700; 
+    border: 2px solid transparent;
+}
+button:hover{
+    background-color: white;
+    color: rgba(23, 218, 225, 1);
+    border: 2px solid rgba(23, 218, 225, 1);
+    box-shadow: 5px 5px 10px rgba(232, 232, 232, 0.691);
 }

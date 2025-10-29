@@ -3,7 +3,7 @@
 //using bubble sort here
 var arr = [6, 8, 3, 9, 10, 2];
 
-for(var i = 0; i < n - 1; i++){             //outer loop
+for(var i = 0; i < n - 1; i++){             //outer loop - no. of passes
     for(var j = 0; j < n - i - 1; j++){     //inner loop - going through array checking each element
         if(arr[j] > arr[j+1]){  //if element is greater than its next element
             var temp = arr[j];  //switch them using temp variable

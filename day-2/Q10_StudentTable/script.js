@@ -1,13 +1,11 @@
-var studentsData = [];
-
 var button = document.querySelector("button")
 
 //DISPLAY ALL RECORDS IN ARRAY FROM LOCALSTORAGE
-    if(localStorage.getItem("student-data")){
-        var data = JSON.parse(localStorage.getItem("student-data"));
-        var recordsDiv = document.querySelector("#records");
+if(localStorage.getItem("student-data")){
+    var studentsData = JSON.parse(localStorage.getItem("student-data"));
+    var recordsDiv = document.querySelector("#records");
     
-    var records = data.map((student, index) => 
+    var records = studentsData.map((student, index) => 
         `
         <tr>
                     <td>${student.name}</td>
@@ -23,13 +21,15 @@ var button = document.querySelector("button")
     );
     recordsDiv.innerHTML = records.join('');
 
-    }
+}else{
+    var studentsData = [];
+}
     
 
 button.addEventListener("click", function(){
-    //TAKE INPUT FROM USER
+    //TAKE NAME INPUT FROM USER
     var name = prompt("Enter your name");
-    //VALIDATE INPUT
+    //VALIDATE NAME INPUT
     while(name.length === 0){
         alert("Please enter your name");
         var name = prompt("Enter your name");
@@ -38,20 +38,17 @@ button.addEventListener("click", function(){
         }
     }
 
-    var s1 = validate(s1);
-    var s2 = Number(prompt("Enter marks of subject 2 out of 100"));
-    var s2 = validate(s2);
-    var s3 = Number(prompt("Enter marks of subject 3 out of 100"));
-    var s3 = validate(s3);
-    var s4 = Number(prompt("Enter marks of subject 4 out of 100"));
-    var s4 = validate(s4);
-    var s5 = Number(prompt("Enter marks of subject 5 out of 100"));
-    var s5 = validate(s5);
+    //TAKE ALL SUBJECT INPUTS AND VALIDATE
+    var s1 = takeInputAndValidate(1);
+    var s2 = takeInputAndValidate(2);
+    var s3 = takeInputAndValidate(3);
+    var s4 = takeInputAndValidate(4);
+    var s5 = takeInputAndValidate(5);
     
 
     //CALCULATE TOTAL AND AVERAGE
     var total = s1 + s2 + s3 + s4 + s5;
-    var avg = total / 5;
+    var avg = (total / 5).toFixed(2);
 
     //PUSH STUDENT OBJECT INTO ARRAY
     studentsData.push({
@@ -66,6 +63,10 @@ button.addEventListener("click", function(){
     })
 
     console.log(studentsData);
+
+    //ADD UPDATED ARRAY TO LOCALSTORAGE
+    localStorage.setItem("student-data", JSON.stringify(studentsData));
+
     
     //DISPLAY ALL RECORDS WITH THE ADDED NEW STUDENT
     var recordsDiv = document.querySelector("#records");
@@ -85,25 +86,17 @@ button.addEventListener("click", function(){
         `
     );
     recordsDiv.innerHTML = records.join('');
-
-    //ADD NEW ARRAY TO LOCALSTORAGE
-    localStorage.setItem("student-data", JSON.stringify(studentsData));
-
-    
     
 });
 
-function validate(value){
+function takeInputAndValidate(value){
     var val = Number(prompt(`Enter marks of subject ${value} out of 100`));
-    while(value < 0 || value > 100){
-        console.log("here");
+    while(isNaN(val) || val < 0 || val > 100){ //PROMPT REPEATEDLY UNTIL VALID VALUE IS ENTERED
         alert("Please enter a value between 1 and 100");
-        var val = Number(prompt(`Enter marks of subject ${value} out of 100`));
-        if(value > 0 && value < 100){
-            break;
-        }
-
+        val = Number(prompt(`Enter marks of subject ${value} out of 100`));
     }
 
     return val;
 }
+
+
