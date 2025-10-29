@@ -176,6 +176,56 @@ footer {
   text-align: left;
 }
 
+.care-desc {
+  width: 630px;
+  margin: 0 auto;
+  margin-top: 16px;
+}
+
+.care-container {
+  padding-top: 48px;
+}
+
+.care-image-container {
+  position: relative;
+  width: 368px;
+}
+
+.care-text {
+  position: absolute;
+  background: #F5F7FA;
+  width: 80%;
+  left: 10%;
+  height: 150px;
+  top: 68%;
+  border-radius: 6px;
+  text-align: center;
+  padding: 20px;
+  font-size: 20px;
+  box-sizing: border-box;
+  box-shadow: 6px 6px 10px rgba(179, 179, 179, 0.466);
+}
+
+.care-text a {
+  text-decoration: none;
+  color: #4CAF4F;
+  margin-top: 15px;
+  font-size: 17px;
+  display: block;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.care-image-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 50px 0px;
+}
+
 * {
   margin: 0;
   padding: 0;
