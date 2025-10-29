@@ -1,0 +1,26 @@
+@use 'partials/variables' as *;
+@use 'partials/mixins' as *;
+
+.hero{
+    background-color: #F5F7FA;
+    margin: 0;
+    padding: 96px 0;
+    height: 63.5vh;
+    @include flexCustom(row, center, center)
+
+}
+
+.hero-heading{
+    font-size: 64px;
+}
+
+.hero-span{
+    color: $accent-color;
+}
+
+.hero-button{
+    border: none;
+    @include primary-button(25px, 80px);
+    gap: 10px;
+    font-weight: 700;
+}

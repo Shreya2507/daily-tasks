@@ -1,0 +1,92 @@
+@use 'partials/variables' as *;
+@use 'partials/mixins' as *;
+
+footer{
+    padding: 64px 165px;
+    @include flexCustom(row, space-between, center);
+    gap: 125px;
+    color: white;
+    background-color: #263238;
+}
+
+.margin{
+    margin-bottom: 7px;
+}
+
+.footer-left{
+    width: 350px;
+    height: 190px;
+    @include flexCustom(column, space-between, left);
+    
+}
+
+.footer-right{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    gap: 125px
+}
+
+.footer-right .category{
+    @include flexCustom(column, space-between, left);
+    width: 125px;
+}
+.footer-right .title{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.footer-right .links a{
+    margin-bottom: 18px;
+    display: block;
+    text-decoration: none;
+    color: white;
+}
+
+.socials-container{
+    width: 60%;
+    @include flexCustom(row, space-between, center);
+
+}
+
+.socials-container div {
+    width: 25px;
+    height: 25px;
+    padding: 5px;
+    border-radius: 30px;
+    @include flexCustom(row, center, center);
+    background-color: rgba(255, 255, 255, 0.26);
+}
+
+.socials-container div img {
+    width: 18px;
+    // height: 18px;
+}
+
+.updates-form .box{
+    position: relative;
+
+}
+
+.updates-form .box input{
+    padding: 13px;
+    width: 220px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.26);
+    outline: none;
+    border: none;
+}
+
+.updates-form .box input::placeholder{
+    color: white;
+}
+
+.updates-form .box button{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background-color: transparent;
+    border: none;
+}
+

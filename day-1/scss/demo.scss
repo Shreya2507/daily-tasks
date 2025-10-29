@@ -1,0 +1,30 @@
+@use 'partials/variables' as *;
+@use 'partials/mixins' as *;
+
+.demo-container{
+    background-color: #F5F7FA;
+    padding: 32px 300px;
+    box-sizing: border-box;
+    margin-bottom: 0;
+    @include flexCustom(column, space-between, center)
+}
+
+.demo-heading{
+    color: #263238;
+    font-size: 64px;
+    font-weight: bold;
+    margin-bottom: 32px;
+}
+.demo-button{
+    border: none;
+    @include primary-button(50px, 170px);
+    gap: 10px;
+    font-weight: 700;
+}
+.demo-button img{
+    width: 18px;
+}
+
+.text-left{
+    text-align: left;
+}

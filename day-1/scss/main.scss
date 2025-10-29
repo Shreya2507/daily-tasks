@@ -1,5 +1,8 @@
 @use 'partials/variables' as *;
 @use 'partials/mixins' as *;
+@use './footer' as *;
+@use './hero' as *;
+@use './demo.scss' as *;
 
 * {
     margin: 0;
@@ -8,6 +11,10 @@
 
 body {
     font-family: $base-font-family;
+}
+
+button{
+    cursor: pointer;
 }
 
 .header-container {
@@ -84,84 +91,13 @@ body {
 }
 
 //HERO
-.hero{
-    background-color: #F5F7FA;
-    margin: 0;
-    padding: 96px 0;
-    height: 63.5vh;
-    @include flex-center
 
-}
-
-.hero-heading{
-    font-size: 64px;
-}
-
-.hero-span{
-    color: $accent-color;
-}
-
-.hero-button{
-    border: none;
-    @include primary-button;
-    height: 25px;
-    width: 80px;
-    @include flex-center;
-    gap: 10px;
-    font-weight: 700;
-}
 
 //SECTION-7
-.care-desc {
-    width: 630px;
-    margin: 0 auto;
-    margin-top: 16px;
-}
 
-.care-container {
-    padding-top: 48px;
-}
-
-.care-image-container {
-    position: relative;
-    width: 368px;
-}
-
-.care-text {
-    position: absolute;
-    background: #F5F7FA;
-    width: 80%;
-    left: 10%;
-    height: 150px;
-    top: 68%;
-    border-radius: 6px;
-    text-align: center;
-    padding: 20px;
-    font-size: 20px;
-    box-sizing: border-box;
-    box-shadow: 6px 6px 10px rgba(179, 179, 179, 0.466);
-}
-
-.care-text a{
-    text-decoration: none;
-    color: $accent-color;
-    margin-top: 15px;
-    font-size: 17px;
-    display: block;
-    @include flex-center;
-    gap: 8px;
-}
-
-
-.care-image-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding: 50px 0px;
-}
 
 .info-container{
-    @include flex-between;
+    @include flexCustom(row, space-between, center);
     gap: 100px;
 }
 
@@ -172,7 +108,7 @@ body {
     padding: 32px 0;
 }
 .section-6 .centered-container{
-    @include flex-between;
+    @include flexCustom(row, space-between, center);
     gap: 100px;
 }
 
@@ -181,27 +117,23 @@ body {
 }
 
 .section-6 .right{
-    @include flex-col-left;
+    @include flexCustom(column, center, left);
     gap: 10px;
 }
 
 .section-6 .right .bottom{
-    @include flex-between;
+    @include flexCustom(row, space-between, center);
 }
 
 .section-6 .right .bottom .link{
-    @include flex-between;
+    @include flexCustom(row, space-between, center);
     gap: 7px;
 }
 
 //SECTION 7
 .info-section-button{
     border: none;
-    @include primary-button;
-    height: 30px;
-    width: 100px;
-    @include flex-center;
-    gap: 10px;
+    @include primary-button(30px, 100px);
     font-weight: 700;
 }
 
@@ -221,14 +153,9 @@ body {
 
 .system-card{
     width: 251px;
+    @include flexCustom(column, space-between, center)
 }
 
-.flex-center-col {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-}
 
 //SECTION 4
 .section-4{
@@ -237,7 +164,7 @@ body {
 }
 
 .section-4-sub{
-    @include flex-between;
+    @include flexCustom(row, space-between, center);
 }
 
 .green-text{
@@ -253,129 +180,11 @@ body {
 }
 
 .grid-element{
-    @include flex-between;
+    @include flexCustom(row, space-between, center);
     gap: 20px;
 }
 
 //SECTION 8
-.demo-container{
-    background-color: #F5F7FA;
-    padding: 32px 300px;
-    box-sizing: border-box;
-    margin-bottom: 0;
-}
-
-.demo-heading{
-    color: #263238;
-    font-size: 64px;
-    font-weight: bold;
-    margin-bottom: 32px;
-}
-.demo-button{
-    border: none;
-    @include primary-button;
-    height: 50px;
-    width: 170px;
-    @include flex-center;
-    gap: 10px;
-    font-weight: 700;
-}
-.demo-button img{
-    width: 18px;
-}
-
-.text-left{
-    text-align: left;
-}
 
 
 //FOOTER
-footer{
-    padding: 64px 165px;
-    @include flex-between;
-    gap: 125px;
-    color: white;
-    background-color: #263238;
-}
-
-.margin{
-    margin-bottom: 7px;
-}
-
-.footer-left{
-    width: 350px;
-    height: 190px;
-    @include flex-col-left;
-    
-}
-
-.socials-container{
-    width: 60%;
-    @include flex-between;
-
-}
-
-.socials-container div {
-    width: 25px;
-    height: 25px;
-    padding: 5px;
-    border-radius: 30px;
-    @include flex-center;
-    background-color: rgba(255, 255, 255, 0.26);
-}
-
-.socials-container div img {
-    width: 18px;
-    // height: 18px;
-}
-
-.footer-right{
-    display: flex;
-    justify-content: center;
-    align-items: start;
-    gap: 125px
-}
-
-.footer-right .category{
-    @include flex-col-left;
-    width: 125px;
-}
-.footer-right .title{
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 25px;
-}
-
-.footer-right .links a{
-    margin-bottom: 18px;
-    display: block;
-    text-decoration: none;
-    color: white;
-}
-
-.updates-form .box{
-    position: relative;
-
-}
-
-.updates-form .box input{
-    padding: 13px;
-    width: 220px;
-    border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.26);
-    outline: none;
-    border: none;
-}
-
-.updates-form .box input::placeholder{
-    color: white;
-}
-
-.updates-form .box button{
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    background-color: transparent;
-    border: none;
-
-}
