@@ -1,28 +1,34 @@
 var button = document.querySelector("button")
 
+var studentsData = [];
+
 //DISPLAY ALL RECORDS IN ARRAY FROM LOCALSTORAGE
 if(localStorage.getItem("student-data")){
-    var studentsData = JSON.parse(localStorage.getItem("student-data"));
+    console.log("Data exists")
+    
+    var data = JSON.parse(localStorage.getItem("student-data"));
+
     var recordsDiv = document.querySelector("#records");
     
-    var records = studentsData.map((student, index) => 
-        `
+    var records = data.map(function (student, index) {
+        return `
         <tr>
                     <td>${student.name}</td>
-                    <td>${student.s1}</td>
-                    <td>${student.s2}</td>
-                    <td>${student.s3}</td>
-                    <td>${student.s4}</td>
-                    <td>${student.s5}</td>
+                    ${
+                        student.marks.map(function (mark, ind){
+                            return `
+                            <td>${mark}</td>
+                            `
+                        }).join('')
+                    }
                     <td>${student.total}</td>
                     <td>${student.avg}</td>
         </tr>
         `
+    }
     );
     recordsDiv.innerHTML = records.join('');
 
-}else{
-    var studentsData = [];
 }
     
 
@@ -33,31 +39,43 @@ button.addEventListener("click", function(){
     while(name.length === 0){
         alert("Please enter your name");
         var name = prompt("Enter your name");
-        if(name.length !== 0){
-            break;
-        }
+    }
+
+    if(name === null){
+        //
     }
 
     //TAKE ALL SUBJECT INPUTS AND VALIDATE
+    var marks = [];
+    for(var i = 1; i < 6; i++){
+        
+
+    }
+    
     var s1 = takeInputAndValidate(1);
+    marks.push(s1);
     var s2 = takeInputAndValidate(2);
+    marks.push(s2);
     var s3 = takeInputAndValidate(3);
+    marks.push(s3);
     var s4 = takeInputAndValidate(4);
+    marks.push(s4);
     var s5 = takeInputAndValidate(5);
+    marks.push(s5);
     
 
     //CALCULATE TOTAL AND AVERAGE
-    var total = s1 + s2 + s3 + s4 + s5;
-    var avg = (total / 5).toFixed(2);
+    // var total = s1 + s2 + s3 + s4 + s5;
+    const total = marks.reduce(function (acc, currentMark){
+        return acc + currentMark;
+    }, 0)
+
+    var avg = (total / marks.length).toFixed(2);
 
     //PUSH STUDENT OBJECT INTO ARRAY
     studentsData.push({
         name: name,
-        s1: s1,
-        s2: s2,
-        s3: s3,
-        s4: s4,
-        s5: s5,
+        marks: marks,
         total: total,
         avg: avg
     })
@@ -71,20 +89,22 @@ button.addEventListener("click", function(){
     //DISPLAY ALL RECORDS WITH THE ADDED NEW STUDENT
     var recordsDiv = document.querySelector("#records");
     
-    var records = studentsData.map((student, index) => 
-        `
+    var records = studentsData.map(function(student, index){
+        return `
         <tr>
                     <td>${student.name}</td>
-                    <td>${student.s1}</td>
-                    <td>${student.s2}</td>
-                    <td>${student.s3}</td>
-                    <td>${student.s4}</td>
-                    <td>${student.s5}</td>
+                    ${
+                        student.marks.map(function (mark, ind){
+                            return `
+                            <td>${mark}</td>
+                            `
+                        }).join('')
+                    }
                     <td>${student.total}</td>
                     <td>${student.avg}</td>
         </tr>
         `
-    );
+    });
     recordsDiv.innerHTML = records.join('');
     
 });
