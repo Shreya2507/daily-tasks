@@ -1,0 +1,61 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+
+#page{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding: 40px 0;
+    box-sizing: border-box;
+}
+
+#heading{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#title{
+    font-size: 25px;
+}
+
+#costliest-product{
+    font-size: 25px;
+
+}
+
+#product-grid{
+    width: 90%;
+    height: 100%;
+    display: grid;
+    
+    grid-template-columns: auto auto auto;
+
+    margin-top: 10px;
+
+    gap: 20px;
+}
+
+.card{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.hovering{
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.219);
+}
