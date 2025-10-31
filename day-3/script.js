@@ -27,7 +27,6 @@ heading.appendChild(title);
 heading.appendChild(costliestProduct);
 
 title.textContent = "Product Page";
-title.id = "title";
 
 costliestProduct.textContent = "Costliest product is"
 costliestProduct.id = "costliest-product";
@@ -49,7 +48,7 @@ const product1 = new Product("TV", "Electronic appliance", 20000);
 const product2 = new Product("Laptop", "Electronic appliance", 10000);
 const product3 = new Product("Tshirt", "Clothing", 1000);
 const product4 = new Product("Coat", "Clothing", 500);
-const product5 = new Product("Pan", "Kitchen utencil", 20000);
+const product5 = new Product("Pan", "Kitchen utencil", 200);
 
 //add all to product array
 productList.push(product1);
@@ -58,7 +57,7 @@ productList.push(product3);
 productList.push(product4);
 productList.push(product5);
 
-console.log(productList)
+// console.log(productList)
 
 
 for(let index in productList){
@@ -68,18 +67,27 @@ for(let index in productList){
     const card = document.createElement("div");
     const name = document.createElement("div");
     const category = document.createElement("div");
+    const pricesContainer = document.createElement("div");
     const price = document.createElement("div");
     const discountedPrice = document.createElement("div");
 
     name.textContent = product.name;
-    price.textContent = "Price: " + product.price;
-    category.textContent = "Category: " + product.category;
-    discountedPrice.textContent = "Price after discount: " + product.getDiscountedPrice(10);
+    name.id = "name";
+    price.textContent = product.price;
+    price.id = "price"
+    category.textContent = product.category;
+    category.id = "category";
+    discountedPrice.textContent =  product.getDiscountedPrice(10);
+    discountedPrice.id = "discountedPrice";
+    pricesContainer.id = "pricesContainer";
 
-    card.appendChild(name);
-    card.appendChild(price);
     card.appendChild(category);
-    card.appendChild(discountedPrice);
+    card.appendChild(name);
+
+    pricesContainer.appendChild(discountedPrice);
+    pricesContainer.appendChild(price);
+
+    card.appendChild(pricesContainer);    
 
     card.classList.add("card");
 
@@ -97,30 +105,35 @@ var cards = document.querySelectorAll(".card");
         })
 });
 
-function findCostliest(productList){
+function findCostliest(){
 
-    let max = 0;
-
-    // getMax.call(productList);
+    let max = productList[0];
+    console.log(max);
 
     for(let index in productList){
         let product = productList[index];
 
-        max = getMax.call(product, max);
+        // max = getMax.call(product, max);
+        if(product.price > max.price){
+            max = product;
+        }
     }
 
     return max;
 }
 
-function getMax(max){
-    if(this.price > max){
-        max = this.price;
-        return max;
-    }else{
-        return this.price;
-    }
-}
+// function getMax(max){
+//     if(this.price > max.price){
+//         max = this;
+//         return max;
+//     }else{
+//         return this;
+//     }
+// }
 
+const max = findCostliest.apply(productList);
+const maxName = max.name;
+const maxPrice = max.price;
 
-costliestProduct.textContent = "Costliest product is " + findCostliest(productList);
+costliestProduct.textContent = `Costliest product is ${maxName} with price ${maxPrice}`;
 })();
