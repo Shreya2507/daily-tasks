@@ -16,7 +16,7 @@
 }
 
 #heading{
-    width: 90%;
+    width: 80%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -33,7 +33,7 @@
 }
 
 #product-grid{
-    width: 90%;
+    width: 80%;
     height: 100%;
     display: grid;
     
@@ -41,8 +41,8 @@
 
     margin-top: 30px;
 
-    row-gap: 20px;
-    column-gap: 85px;
+    row-gap: 70px;
+    column-gap: 90px;
 }
 
 .card{

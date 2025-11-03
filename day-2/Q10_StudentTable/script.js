@@ -4,13 +4,13 @@ var studentsData = [];
 
 //DISPLAY ALL RECORDS IN ARRAY FROM LOCALSTORAGE
 if(localStorage.getItem("student-data")){
-    console.log("Data exists")
+    console.log("Data exists");
     
-    var data = JSON.parse(localStorage.getItem("student-data"));
+    var studentsData = JSON.parse(localStorage.getItem("student-data"));
 
     var recordsDiv = document.querySelector("#records");
     
-    var records = data.map(function (student, index) {
+    var records = studentsData.map(function (student, index) {
         return `
         <tr>
                     <td>${student.name}</td>
@@ -41,27 +41,33 @@ button.addEventListener("click", function(){
         var name = prompt("Enter your name");
     }
 
-    if(name === null){
-        //
-    }
+    if(name !== null){
+        //TAKE ALL SUBJECT INPUTS AND VALIDATE
+        var marks = [];
+        for(var i = 1; i < 6; i++){
+            var val = Number(prompt(`Enter marks of subject ${i} out of 100`));
+            while(isNaN(val) || val < 0 || val > 100 || val === null){ //PROMPT REPEATEDLY UNTIL VALID VALUE IS ENTERED
+                alert("Please enter a value between 1 and 100");
+                val = Number(prompt(`Enter marks of subject ${i} out of 100`));
+            }
 
-    //TAKE ALL SUBJECT INPUTS AND VALIDATE
-    var marks = [];
-    for(var i = 1; i < 6; i++){
+            marks.push(val);
+            
+        }
         
-
     }
+
     
-    var s1 = takeInputAndValidate(1);
-    marks.push(s1);
-    var s2 = takeInputAndValidate(2);
-    marks.push(s2);
-    var s3 = takeInputAndValidate(3);
-    marks.push(s3);
-    var s4 = takeInputAndValidate(4);
-    marks.push(s4);
-    var s5 = takeInputAndValidate(5);
-    marks.push(s5);
+    // var s1 = takeInputAndValidate(1);
+    // marks.push(s1);
+    // var s2 = takeInputAndValidate(2);
+    // marks.push(s2);
+    // var s3 = takeInputAndValidate(3);
+    // marks.push(s3);
+    // var s4 = takeInputAndValidate(4);
+    // marks.push(s4);
+    // var s5 = takeInputAndValidate(5);
+    // marks.push(s5);
     
 
     //CALCULATE TOTAL AND AVERAGE
@@ -109,14 +115,14 @@ button.addEventListener("click", function(){
     
 });
 
-function takeInputAndValidate(value){
-    var val = Number(prompt(`Enter marks of subject ${value} out of 100`));
-    while(isNaN(val) || val < 0 || val > 100){ //PROMPT REPEATEDLY UNTIL VALID VALUE IS ENTERED
-        alert("Please enter a value between 1 and 100");
-        val = Number(prompt(`Enter marks of subject ${value} out of 100`));
-    }
+// function takeInputAndValidate(value){
+//     var val = Number(prompt(`Enter marks of subject ${value} out of 100`));
+//     while(isNaN(val) || val < 0 || val > 100){ //PROMPT REPEATEDLY UNTIL VALID VALUE IS ENTERED
+//         alert("Please enter a value between 1 and 100");
+//         val = Number(prompt(`Enter marks of subject ${value} out of 100`));
+//     }
 
-    return val;
-}
+//     return val;
+// }
 
 
