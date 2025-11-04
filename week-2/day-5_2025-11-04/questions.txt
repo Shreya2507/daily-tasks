@@ -1,0 +1,8 @@
+Q3.  Connect to a remote server, create a directory, and copy files into it using SCP.
+Q5.  Generate an SSH key pair and configure it for two different remote servers.
+Q11. Zip the content of your home directory via tar and send it via scp to other person laptop. Unzip the content on other person laptop via tar. 
+
+
+Q9.  Explore vi/vim for  Creating a text file. Understand cursor movement, switching input mode (append, insert etc), deleting command, pasting content, undo , redo ,search , save and quit operations in vim. 
+
+Q12. Install and setup application via apt - mysql, postman, docker, dbeaver
