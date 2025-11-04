@@ -119,14 +119,14 @@ const objArr = [
 //     return selectedKeys;
 // }
 
-//USING destructuring ---
+//USING destructuring 
 const getSelectedKeys = (arr) => {
     const selectedKeys = arr.map(({id, title, rating}) => {
         return {
          "id": id,
          "title": title,
          "rate": rating?.rate, 
-         "count": rating.count
+         "count": rating?.count
         }
     });
 
@@ -154,6 +154,8 @@ const obj = { a: 1, b: { c: 2 } };
 //using JSON.parse() and JSON.stringify()
 // const obj2 = JSON.parse(JSON.stringify(obj));
 
+
+//using custom method
 function getDeepClone(obj) {
   if (typeof obj !== "object" || obj === null) {
     return obj;

@@ -7,19 +7,6 @@
     align-items: $align;
 }
 
-// @mixin flex-between {
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-// }
-
-// @mixin flex-col-left{
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: space-between;
-//     align-items: left;
-// }
-
 
 @mixin primary-button($height, $width) {
     background: $accent-color;
@@ -28,5 +15,5 @@
     padding: 14px 32px;
     height: $height;
     width: $width;
-    @include flexCustom(row, between, center);
+    @include flexCustom(row, space-between, center);
 }

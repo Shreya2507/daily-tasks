@@ -102,8 +102,8 @@ footer {
 .hero {
   background-color: #F5F7FA;
   margin: 0;
-  padding: 96px 0;
-  height: 63.5vh;
+  padding: 96px 200px;
+  height: 80vh;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -130,8 +130,15 @@ footer {
   flex-direction: row;
   justify-content: between;
   align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   gap: 10px;
   font-weight: 700;
+  font-size: 16px;
+  width: 150px;
+  height: 50px;
 }
 
 .demo-container {
@@ -349,6 +356,7 @@ button {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin-top: 10px;
 }
 
 .section-6 .right .bottom .link {
@@ -365,13 +373,18 @@ button {
   color: #fff;
   border-radius: 4px;
   padding: 14px 32px;
-  height: 30px;
-  width: 100px;
+  height: 50px;
+  width: 150px;
   display: flex;
   flex-direction: row;
   justify-content: between;
   align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   font-weight: 700;
+  font-size: 15px;
 }
 
 .section {

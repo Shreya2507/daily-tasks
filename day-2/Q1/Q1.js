@@ -13,7 +13,7 @@ function validate(){
 
     else if( age < 18 ){
         console.log(age);
-        error.innerHTML = "Age should be greater than or equal to 18";
+        error.textContent = "Age should be greater than or equal to 18";
         return false;
     }
 

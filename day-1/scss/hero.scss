@@ -4,8 +4,8 @@
 .hero{
     background-color: #F5F7FA;
     margin: 0;
-    padding: 96px 0;
-    height: 63.5vh;
+    padding: 96px 200px;
+    height: 80vh;
     @include flexCustom(row, center, center)
 
 }
@@ -21,6 +21,11 @@
 .hero-button{
     border: none;
     @include primary-button(25px, 80px);
+    @include flexCustom(row, center, center);
     gap: 10px;
     font-weight: 700;
+    font-size: 16px;
+
+    width: 150px;
+    height: 50px;
 }

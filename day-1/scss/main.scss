@@ -124,6 +124,7 @@ button{
 
 .section-6 .right .bottom{
     @include flexCustom(row, space-between, center);
+    margin-top: 10px;
 }
 
 .section-6 .right .bottom .link{
@@ -134,8 +135,10 @@ button{
 //SECTION 7
 .info-section-button{
     border: none;
-    @include primary-button(30px, 100px);
+    @include primary-button(50px, 150px);
+    @include flexCustom(row, center, center);
     font-weight: 700;
+    font-size: 15px;
 }
 
 .section{
