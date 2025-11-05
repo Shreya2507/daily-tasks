@@ -70,7 +70,7 @@ let findMax = (arr) => {
 }
 console.log(findMax([3, 5, 7, 2, 8]));
 
-//Q9.
+//Q9. - use destructuring
 const data =[
   {
     name: "Bob",
