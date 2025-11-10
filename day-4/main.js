@@ -70,7 +70,7 @@ let findMax = (arr) => {
 }
 console.log(findMax([3, 5, 7, 2, 8]));
 
-//Q9. - use destructuring
+//Q9.
 const data =[
   {
     name: "Bob",
@@ -81,12 +81,21 @@ const data =[
     age: 21
   }
 ]
+
+// let extractAndDisplay = () => {
+//     const name = data[1].name;
+//     const age = data[0].age;
+
+//     return `${name}'s age is ${age}`;
+// }
+
+//USING DESTRUCTURING   
 let extractAndDisplay = () => {
-    const name = data[1].name;
-    const age = data[0].age;
+    const [{name}, {age}] = data; // get name from 1st object & age from 2nd object
 
     return `${name}'s age is ${age}`;
 }
+
 console.log(extractAndDisplay());
 
 //Q10.
@@ -101,7 +110,7 @@ const objArr = [
         "rating": {
             "rate": 3.9,
             "count": 120
-        }
+        }/*  */
     }
 ]
 
@@ -211,9 +220,3 @@ let recursion = (inputArray, outputArray, index) => {
 
 const nestedArr = [1, [2, [3, [4, 5]]]];
 console.log(flattenArray(nestedArr));
-
-
-
-
-
-
