@@ -1,0 +1,21 @@
+#loginContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    margin: auto;
+    padding: 0;
+    /* color: #646cff; */
+}
+
+#loginContainer .heading{
+    font-size: 60px;
+    font-weight: 800;
+}
+
+#loginContainer button{
+    padding: 15px 50px;
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 700;
+}

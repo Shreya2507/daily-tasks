@@ -1,0 +1,36 @@
+.counter{
+    width: fit-content;
+    margin: auto;
+    border: 2px solid #646cff;
+    box-shadow: 5px 5px 10px #646cff96;
+    padding: 40px 40px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.count{
+    font-size: 3.5vw;
+    margin-bottom: 20px;
+    font-weight: 900;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    font-size: 50px;
+}
+
+.buttons button{
+    padding: 0;
+    width: 80px;
+    height: 80px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

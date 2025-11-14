@@ -1,0 +1,25 @@
+#undefinedPage{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    margin: auto;
+    padding: 0;
+    color: #646cff;
+}
+
+.errorText{
+    font-weight: 800;
+    font-size: 70px;
+}
+
+.errorStatus{
+    font-weight: 600;
+    font-size: 40px;
+    margin-top: -25px;
+}
+
+.errorLine{
+    font-size: 25px;
+    margin-top: 15px;
+}

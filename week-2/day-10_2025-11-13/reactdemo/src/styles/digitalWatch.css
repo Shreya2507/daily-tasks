@@ -1,0 +1,21 @@
+.digitalWatch{
+    border: 2px solid #646cff;
+    box-shadow: 5px 5px 10px #646cff96;
+    padding: 25px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 35px;
+
+}
+
+.watchTitle{
+    font-weight: bolder;
+
+}
+
+.watchText{
+    font-weight: bold;
+
+}

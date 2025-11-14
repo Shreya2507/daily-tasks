@@ -1,0 +1,23 @@
+#dashboard .welcomeText{
+    font-size: 55px;
+    font-weight: 800;
+    margin-top: 10vh;
+}
+
+#dashboard .startText{
+    font-size: 24px;
+    font-weight: 300;
+    margin-top: -12px;
+    margin-bottom: 10vh;
+}
+
+.logout{
+    font-size: 35px;
+    padding: 10px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 100px;
+    left: 50px;
+}

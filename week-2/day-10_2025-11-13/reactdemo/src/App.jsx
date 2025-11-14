@@ -30,12 +30,10 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={isAuthenticated ? <Dashboard /> : <Login setIsAuthenticated={setIsAuthenticated} />} />
-        
-        <Route element={<Header />}>
-          <Route element={<ProtectedRoute isAuthenticated={isAuthenticated} />}>
-            <Route path='/dashboard' element={<Dashboard />} />
-            <Route path='/counter' element={<Counter />} />
-            <Route path='/digitalWatch' element={<DigitalWatch />}/>
+        <Route element={<ProtectedRoute isAuthenticated={isAuthenticated} />}>
+          <Route path='/dashboard' element={<Dashboard setIsAuthenticated={setIsAuthenticated} />}>
+            <Route path='/dashboard/counter' element={<Counter />} />
+            <Route path='/dashboard/digitalWatch' element={<DigitalWatch />}/>
           </Route>
         </Route>
 

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import "../styles/digitalWatch.css"
 
 const DigitalWatch = () => {
     const [time, setTime] = useState("");
@@ -14,13 +15,14 @@ const DigitalWatch = () => {
         return clearInterval(startTimer);
 
     }, []);
+
   return (
-    <>
-    <div>
-      Digital Watch
+    <div class='digitalWatch'>
+      <div class='watchTitle'>
+        Digital Watch :
+      </div>
+      <div class='watchText'>{time}</div>
     </div>
-    <div>{time}</div>
-    </>
   )
 }
 

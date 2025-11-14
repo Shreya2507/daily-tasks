@@ -1,16 +1,18 @@
 import React from 'react'
-import { Link, Outlet } from 'react-router-dom';
-
+import { Link } from 'react-router-dom';
+import "../styles/header.css"
 const Header = () => {
   return (
-    <>
-    <div style={{width: '100vw', height:'40px', backgroundColor: '#646cff', position: 'absolute', top: 0, left:0, right:0}}>
-        <Link style={{color: 'white'}} to={"/dashboard"}>Go back to dashboard</Link>
-        <Link style={{color: 'white'}} to={"/counter"}>Counter</Link>
-        <Link style={{color: 'white'}} to={"/digitalWatch"}>Digital Watch</Link>     
-    </div>
-    <Outlet />
-    </>
+    <header>
+
+      <Link to={"/dashboard"} className='logo'>QuickDash</Link>
+      <div class='links'>
+          {/* <Link style={{color: 'white'}} to={"/dashboard"}>Go back to dashboard</Link> */}
+          <Link className='link' style={{color: 'white'}} to={"/dashboard/counter"}>Counter</Link>
+          <Link className='link' style={{color: 'white'}} to={"/dashboard/digitalWatch"}>Digital Watch</Link>     
+      </div>
+   
+    </header>
 
   )
 }
