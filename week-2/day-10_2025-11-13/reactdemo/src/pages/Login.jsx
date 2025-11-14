@@ -5,6 +5,8 @@ const Login = ({setIsAuthenticated}) => {
     const navigate = useNavigate();
     const handleLogin = () => {
         setIsAuthenticated(true);
+        console.log("Authenticated");
+        localStorage.setItem("isAuthenticated", JSON.stringify(true));
         navigate("/dashboard");
     }
   return (

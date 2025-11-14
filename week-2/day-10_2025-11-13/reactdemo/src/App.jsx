@@ -13,21 +13,23 @@ function App() {
 
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  // const getAuthenticationStatus = async () => {
-  //   const status = await JSON.parse(localStorage.getItem("isAuthenticated"));
-  //   setIsAuthenticated(status);
-
-  // }
+  
   useEffect(() => {
-    // getAuthenticationStatus();
-    // const status = await JSON.parse(localStorage.getItem("isAuthenticated"));
-    // setIsAuthenticated(status);
+    const getAuthenticationStatus = async () => {
+      if(localStorage.getItem("isAuthenticated")){
+        const status = await JSON.parse(localStorage.getItem("isAuthenticated"));
+        setIsAuthenticated(status);
+        console.log("User is authenticated already");
+      }      
+    }
+
+    getAuthenticationStatus();
   }, []);
 
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Login setIsAuthenticated={setIsAuthenticated} />} />
+        <Route path="/" element={isAuthenticated ? <Dashboard /> : <Login setIsAuthenticated={setIsAuthenticated} />} />
         
         <Route element={<Header />}>
           <Route element={<ProtectedRoute isAuthenticated={isAuthenticated} />}>
