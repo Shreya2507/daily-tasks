@@ -1,0 +1,66 @@
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+//void main() throws  InterruptedException{
+//
+//    Thread.sleep(2000);
+//    System.out.println("abc");
+//
+//}
+
+void main(){
+
+    //LAMBDA FUNCTION
+    BiFunction<Integer, Integer, Integer> sum = (a, b) -> a + b;
+    BiFunction<Integer, Integer, Integer> multiply = (a, b) -> a * b;
+    BiFunction<Integer, Integer, Double> divide = (a, b) -> (double) (a / b);
+    System.out.println(sum.apply(2,3));
+    System.out.println(multiply.apply(2,3));
+    System.out.println(divide.apply(50,5));
+
+}
+
+public class ProducerConsumer {
+    private Integer data;
+
+    public void producer(int item) throws InterruptedException {
+        // when we use "if" conditional, the producer gets notified & exits the wait condition, it will straightaway go to next line and add item to data
+        //BUT if we use while condition, If there are multiple consumers, if one is done consuming, it will notify & the producer would straightaway exit the if conditional and produce an item ---- but what if other threads are still consuming it
+        //SO, using while loop ensures that even if the thread is notified and wakes up, it will still check the condition (have all items been consumed) again, then if other consumers have not yet consumed, then the producer will wait again --- it will not straightaway go to producing
+
+        while(data != null) {
+            wait();
+        }
+
+        data = item;
+        notify();
+    }
+
+    public void consumer() throws InterruptedException{
+        while(data == null) {
+            wait();
+        }
+
+        //consume data somehow
+
+        notify();
+    }
+}
+
+class MyThread extends Thread{
+    @Override
+    public void run(){
+        System.out.println("New thread created");
+    }
+}
+
+
+
+//for(int i = 1; i <= 10; i++){
+//    System.out.println(i*2);
+//    wait();
+//}
+
+
+//add, multiply, divide 2 numbers
+//function which takes 2 parameters & returns 1 integer
+
