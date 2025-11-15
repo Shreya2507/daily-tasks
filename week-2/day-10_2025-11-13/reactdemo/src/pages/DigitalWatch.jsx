@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import "../styles/digitalWatch.css"
 
 const DigitalWatch = () => {
-    const [time, setTime] = useState("");
+    const [time, setTime] = useState(new Date().toLocaleTimeString());
     const startTimer = () => {
         setInterval(() => {
             setTime(new Date().toLocaleTimeString());
