@@ -1,6 +1,6 @@
 package org.example.FunctionalInterfaceDemo;
 
 
-public interface NumberRule<T, R> {
+public interface NumberRule {
     boolean apply(int n);
 }
